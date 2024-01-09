@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "hypoxia-pilot-study"
+version = "0.1.0"
+description = "client project hypoxia-pilot-study"
+authors = ["zi ye <zi.ye@sapient.bio>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+pandas = "1.4.2"
+numpy = "1.21.5"
+plotly = "5.6.0"
+seaborn = "0.11.2"
+pydantic = "1.10.8"
+matplotlib = "3.5.1"
+openpyxl = "^3.1.2"
+plotnine = "^0.10.1"
+scikit-learn="1.0.2"
+cookiecutter = "^2.1.1"
+cruft = "^2.14.0"
+databricks-sdk = "^0.7.1"
+fsspec = "2023.6.0"
+boto3 = "1.28.17"
+s3fs = "2023.6.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.1.2"
+pre-commit = "^2.19.0"
+coverage = {version = "^6.4.2", extras = ["toml"]}
+pytest-spark = "^0.6.0"
+pyspark-test = "^0.2.0"
+pytest-lazy-fixture = "^0.6.3"
+pytest-mock = "^3.10.0"
+flake8 = "^4.0.1"
+black = "^23.3.0"
+wemake-python-styleguide = "^0.16.1"
+unify = "^0.5"
+isort = "^5.10.1"
+mypy = "^0.982"
+pandas-stubs = "^1.5.0.221012"
+prefect-databricks = "^0.1.4"
+prefect = {extras = ["databricks"], version = "^2.7.10"}
+moto = {version = "3.1.18", extras = ["s3", "server"]}
+ruamel-yaml = "^0.18.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+skip-string-normalization = true
