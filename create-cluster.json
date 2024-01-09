@@ -1,0 +1,51 @@
+{
+    "autoscale": {
+        "min_workers": 1,
+        "max_workers": 4
+    },
+    "cluster_name": "hypoxia-pilot-study",
+    "spark_version": "12.2.x-scala2.12",
+    "spark_conf": {
+        "spark.ui.prometheus.enabled": "true",
+        "spark.executor.processTreeMetrics.enabled": "true",
+        "spark.sql.streaming.metricsEnabled": "true"
+    },
+    "aws_attributes": {
+        "first_on_demand": 1,
+        "availability": "SPOT_WITH_FALLBACK",
+        "zone_id": "auto",
+        "instance_profile_arn": "arn:aws:iam::055741731697:instance-profile/prod-datascience-ip",
+        "spot_bid_price_percent": 100,
+        "ebs_volume_type": "GENERAL_PURPOSE_SSD",
+        "ebs_volume_count": 1,
+        "ebs_volume_size": 100
+    },
+    "node_type_id": "m6i.2xlarge",
+    "driver_node_type_id": "m6i.2xlarge",
+    "ssh_public_keys": [],
+    "custom_tags": {
+        "ProjectID": "153sap23p001",
+        "SecurityHubSuppressor": "security-control/EC2.8",
+        "team": "dataScience"
+    },
+    "cluster_log_conf": {
+        "s3": {
+            "destination": "s3://prod/datascience",
+            "region": "us-west-2",
+            "enable_encryption": true,
+            "canned_acl": "bucket-owner-full-control"
+        }
+    },
+    "spark_env_vars": {
+        "USERNAME": "{{secrets/zi.ye/username}}",
+        "GITHUB_TOKEN": "{{secrets/zi.ye/github_token}}"
+
+    },
+    "autotermination_minutes": 120,
+    "enable_elastic_disk": true,
+    "init_scripts": [],
+    "policy_id": "E061A97FEA00015A",
+    "enable_local_disk_encryption": false,
+    "data_security_mode": "LEGACY_SINGLE_USER_STANDARD",
+    "runtime_engine": "STANDARD"
+  }

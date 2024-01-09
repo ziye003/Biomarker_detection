@@ -1,0 +1,41 @@
+{
+    "run_as": {
+        "user_name": "zi.ye@sapient.bio"
+    },
+    "name": "hypoxia-pilot-study",
+    "email_notifications": {
+        "no_alert_for_skipped_runs": false
+    },
+    "webhook_notifications": {},
+    "timeout_seconds": 0,
+    "max_concurrent_runs": 1,
+    "tasks": [
+        {
+            "task_key": "example_notebook",
+            "notebook_task": {
+                "notebook_path": "notebooks/packaging",
+                "source": "GIT"
+            },
+            "existing_cluster_id": "1130-2323310",
+            "timeout_seconds": 0,
+            "email_notifications": {},
+            "notification_settings": {
+                "no_alert_for_skipped_runs": false,
+                "no_alert_for_canceled_runs": false,
+                "alert_on_last_attempt": false
+            }
+        }
+    ],
+    "git_source": {
+        "git_url": "https://github.com/hypoxia-pilot-study.git",
+        "git_provider": "gitHub",
+        "git_branch": "main"
+    },
+    "format": "MULTI_TASK",
+    "access_control_list": [
+        {
+            "group_name": "prod-datascience-policy-users",
+            "permission_level": "CAN_MANAGE"
+        }
+    ]
+}
